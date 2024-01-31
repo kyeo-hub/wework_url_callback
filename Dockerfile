@@ -15,11 +15,10 @@ FROM python:3.9-alpine
 ENV APP /app
 WORKDIR $APP
 
-# 安装 gunicorn 及其依赖（包括 gcc 和 libc-dev）
-RUN apk add --update --no-cache gcc libc-dev && \
-    pip install --no-cache-dir gunicorn
+# 安装gunicorn、gevent及其依赖
+RUN apk add --update --no-cache gcc libc-dev libffi-dev && \
+    pip install --no-cache-dir gunicorn gevent
 
-# 将第一阶段构建的应用和依赖复制到此阶段
 COPY --from=builder $APP .
 
 EXPOSE 5000
