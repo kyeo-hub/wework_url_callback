@@ -1,0 +1,2 @@
+# wework_url_callbac
+用Python架设简单的企业微信API接收消息服务器，便于设置企业可信IP。
