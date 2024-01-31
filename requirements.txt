@@ -1,5 +1,5 @@
 gunicorn
-gevent
+gevent>=1.4
 flask
 pycrypto
 pybase64
